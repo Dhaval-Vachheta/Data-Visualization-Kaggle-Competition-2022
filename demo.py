@@ -8,7 +8,7 @@ import numpy as np
 # from plotly.subplots import make_subplots
 # from matplotlib import pyplot as plt
 # %matplotlib inline
-import seaborn as sb
+# import seaborn as sb
 
 # Load CSV Data
 # df = pd.read_csv("../input/kaggle-survey-2022/kaggle_survey_2022_responses.csv")
