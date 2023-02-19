@@ -69,4 +69,4 @@ st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[0]) + ' Rows.')
 st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[1]) + ' Columns.')
 
 # Shape of Data 
-st.text('\nShape of Data : ', df.shape)
+st.text('\nShape of Data : ' + df.shape)
