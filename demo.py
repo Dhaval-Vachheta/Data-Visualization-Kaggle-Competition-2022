@@ -13,7 +13,7 @@ import numpy as np
 
 # # Load CSV Data
 # # df = pd.read_csv("../input/kaggle-survey-2022/kaggle_survey_2022_responses.csv")
-url = 'https://github.com/Dhaval-Vachheta/Data-Visualization-Kaggle-Competition-2022/blob/main/Dataset/kaggle_survey_2022_responses.csv'
+url = 'https://github.com/Dhaval-Vachheta/Data-Visualization-Kaggle-Competition-2022/blob/main/Dataset/kaggle_survey_2022_responses.csv?raw=true'
 df = pd.read_csv(url)
 
 # # Extend Columns In Output
