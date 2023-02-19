@@ -8,7 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from matplotlib import pyplot as plt
-%matplotlib inline
+# %matplotlib inline
 import seaborn as sb
 
 # Load CSV Data
