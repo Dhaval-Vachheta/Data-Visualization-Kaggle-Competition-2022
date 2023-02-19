@@ -1,7 +1,8 @@
 # Import Libraries
 import pandas as pd
 import numpy as np
-print("Hello")
+import streamlit as st
+st.text("Hello")
 # # Data Visualizaiton
 # import plotly.express as px
 # import plotly.graph_objects as go
