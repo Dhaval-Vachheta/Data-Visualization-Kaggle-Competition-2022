@@ -65,11 +65,35 @@ st.write('\n:blue[**Following Questions Are Described Using EDA(Exploratory Data
 
 # Display Number of Rows & Columns (Before Data Cleaning)
 st.markdown("<h4 style = 'color : DodgerBlue;'>Display Number of Rows & Columns (Before Data Cleaning)</h4>", unsafe_allow_html = True)
-
 st.text('\nThe Dataset has ' + str(df.shape[0]) + ' rows.')
-
 st.text('\nThe Dataset has ' + str(df.shape[1]) + ' columns.')
 
 # Shape of Data 
 st.text('\nShape of Data : ' + str(df.shape))
 
+# DataFrame Columns 
+st.markdown("<h4 style = 'color : DodgerBlue;'>Original Dataset Column Names</h4>", unsafe_allow_html = True)
+st.text(df.columns)
+
+st.text("\n\n")
+
+# Updated DataFrame Columns
+st.markdown("<h4 style = 'color : DodgerBlue;'>Updated Dataset Column Names</h4>", unsafe_allow_html = True)
+
+# Just Copy DataFrame Into Another Variable
+new_df = df.copy()
+
+# Replace Columns Name
+df.columns = df.iloc[0]
+
+# Records Store From 1 Index
+df = df[1:]
+
+# Reset Index
+df.reset_index(inplace = True)
+
+# Drop Index Column
+df.drop('index', axis = 1, inplace = True)
+
+# Display Column Names
+st.text(df.columns)
