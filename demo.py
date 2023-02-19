@@ -31,6 +31,8 @@ pd.set_option('display.max_columns', 350)
 # Display Entire Data
 st.dataframe(df)
 
+st.text("\n\n")
+
 # Analysis Questions
 st.write('\n:blue[**Following Questions Are Described Using EDA(Exploratory Data Analysis)**]\n\n',
 '1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults).\n',
@@ -104,5 +106,6 @@ st.text(df.columns)
 # NOTE : Here, I'm updating some of the records & create groups inside the data.
 # 1. Here, I've replaced the country name from a big string with a short string/short form.
 # Before Replace Country Name
+st.markdown("<h4 style = 'color : DodgeBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
 st.text("\n* * Before Replace Country Name * *\n")
 st.text(df['In which country do you currently reside?'].unique())
