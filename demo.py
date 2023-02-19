@@ -30,4 +30,4 @@ df = pd.read_csv(url)
 # st.table(df)
 df2=df.head()
 # Display an interactive table
-st.table(df2)
+st.dataframe(df2)
