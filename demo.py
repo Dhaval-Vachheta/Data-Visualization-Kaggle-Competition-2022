@@ -257,9 +257,52 @@ store_option_into_column(201, 215, 'Suggested Business Intelligence Tools')
 # df.isnull().sum
 
 st.markdown("<h4 style = 'color : DodgerBlue;'>1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults.</h4>", unsafe_allow_html = True)
-# Calculation For Young Adults
-count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
-young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
+def fig1():
+	# Calculation For Young Adults
+	count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
+	young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
 
-st.text('Young Adults Counts (18-39) : ' + str(count_young_adults))
-st.text('\nYoung Adults % (18-39) : ' + str(young_adults) + '%')
+	print('Young Adults Counts (18-39) : ' + count_young_adults)
+	print('\nYoung Adults % (18-39) : ' + young_adults + '%')
+
+	# Calculation For Middle Aged Adults
+	count_middle_aged_adults = len(df[(df['What is your age (# years)?'].isin(['40-59']))])
+	middle_aged_adults = len(df[(df['What is your age (# years)?'].isin(['40-59']))]) * 100 / len(df[1:])
+
+	print('Count of Middle Aged Adults Counts (40-59) : ' + count_middle_aged_adults)
+	print('\nMiddle Aged Adults % (40-59) : ' + (middle_aged_adults) + '%')
+
+	# Calculation For Old Adults
+	count_old_adults = len(df[(df['What is your age (# years)?'].isin(['60-70+']))])
+	old_adults = len(df[(df['What is your age (# years)?'].isin(['60-70+']))]) * 100 / len(df[1:])
+
+	print('Old Adults Counts (60-70+) : ' + count_old_adults)
+	print('\nOld Adults % (60-70+) : ' + str(old_adults) + '%')
+
+	# Define Color Sets 
+	colors = ['#002266', '#3377ff', '#ccddff']
+
+	# Pie Chart Based On Age Analysis
+	labels = ['Young Adults (18-39)', 'Middle Aged Adults (40-59)', 'Old Adults (60-70+)']
+	values = [count_young_adults, count_middle_aged_adults, count_old_adults]
+
+	# Pie Chart
+	pie1 = go.Pie(labels = labels, values = values, marker_colors = colors)
+
+	# Explode Width, Color & Size
+	pie1.marker.line.width = 10
+	pie1.marker.line.color = 'white'
+	pie1.hole = 0.5
+
+	# Pie Chart Data Display
+	pie1.textposition = 'outside'
+	pie1.textinfo = 'percent+label'
+	pie1.showlegend = True
+
+	# Display Pie Chart
+	fig1 = go.Figure(data = [pie1], layout = dict(title = dict(text = "Kaggle Survey 2022 - Analysis Based On World Wide Kaggler's Age")))
+	fig1.update_layout(annotations = [dict(text = 'AGE', x = 0.50, y = 0.5, font_size = 20, showarrow = False)])
+	fig1.show()
+   
+st.button(Show Figure 1, on_click=fig1(), args=None, kwargs=None, *, type="secondary", disabled=False, use_container_width=False)
+
