@@ -32,7 +32,7 @@ pd.set_option('display.max_columns', 350)
 st.dataframe(df)
 
 # Analysis Questions
-st.write('\n:blue[**Following Questions Are Described Using EDA(Exploratory Data Analysis)**]\n\n',
+st.write('\n:DodgerBlue[**Following Questions Are Described Using EDA(Exploratory Data Analysis)**]\n\n',
 '1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults).\n',
 '2. Analysis Based On Top 10 Countries Wise Age Division.\n',
 '3. Analysis Based On Kaggler\'s Gender(Man, Woman & Other).\n',
