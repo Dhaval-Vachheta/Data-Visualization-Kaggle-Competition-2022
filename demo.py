@@ -106,6 +106,6 @@ st.text(df.columns)
 # NOTE : Here, I'm updating some of the records & create groups inside the data.
 # 1. Here, I've replaced the country name from a big string with a short string/short form.
 # Before Replace Country Name
-st.markdown("<h4 style = 'color : DodgeBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
-st.text("\n* * Before Replace Country Name * *\n")
+st.markdown("<h4 style = 'color : DodgerBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
+# st.text("\n* * Before Replace Country Name * *\n")
 st.text(df['In which country do you currently reside?'].unique())
