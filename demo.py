@@ -256,7 +256,7 @@ store_option_into_column(201, 215, 'Suggested Business Intelligence Tools')
 # Number of Missing Values
 # df.isnull().sum
 
-st.markdown("<h4 style = 'color : DodgeBlue;'>1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults.</h4>", unsafe_allow_html = True)
+st.markdown("<h4 style = 'color : DodgerBlue;'>1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults.</h4>", unsafe_allow_html = True)
 # Calculation For Young Adults
 count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
 young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
