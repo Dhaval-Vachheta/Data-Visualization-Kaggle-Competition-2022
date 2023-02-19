@@ -123,7 +123,7 @@ st.text(df['In which country do you currently reside?'].unique())
 
 st.text("\n\n")
 
-st.markdown("<h4 style = 'color : DodgeerBlue;'>Here, I categorised age ranges between the 3 groups.</h4>", unsafe_allow_html = True)
+st.markdown("<h4 style = 'color : DodgerBlue;'>Here, I categorised age ranges between the 3 groups.</h4>", unsafe_allow_html = True)
 st.write(':blue[Young Adults [18 - 39]]\n',
-'Middle Aged Adults [40 - 59]\n',
-'Old Adults [60 - 70+]\n')
+':blue[Middle Aged Adults [40 - 59]]\n',
+':blue[Old Adults [60 - 70+]]\n')
