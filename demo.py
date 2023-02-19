@@ -261,5 +261,5 @@ st.markdown("<h4 style = 'color : DodgerBlue;'>1. Analysis Based On Kaggler\'s A
 count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
 young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
 
-st.text('Young Adults Counts (18-39) : ', count_young_adults)
-st.text('\nYoung Adults % (18-39) : ', young_adults, '%')
+st.text('Young Adults Counts (18-39) : ' + count_young_adults)
+st.text('\nYoung Adults % (18-39) : ' + young_adults, '%')
