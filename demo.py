@@ -66,23 +66,23 @@ st.write('\n:blue[**Following Questions Are Described Using EDA(Exploratory Data
 '29. Analysis Based On Learning Platform.\n')
 
 # Display Number of Rows & Columns (Before Data Cleaning)
-st.markdown("<h4 style = 'color : DodgerBlue;'>Display Number of Rows & Columns (Before Data Cleaning)</h4>", unsafe_allow_html = True)
-st.text('\nThe Dataset has ' + str(df.shape[0]) + ' rows.')
-st.text('\nThe Dataset has ' + str(df.shape[1]) + ' columns.')
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Display Number of Rows & Columns (Before Data Cleaning)</h4>", unsafe_allow_html = True)
+# st.text('\nThe Dataset has ' + str(df.shape[0]) + ' rows.')
+# st.text('\nThe Dataset has ' + str(df.shape[1]) + ' columns.')
 
 # Shape of Data 
-st.text('\nShape of Data : ' + str(df.shape))
+# st.text('\nShape of Data : ' + str(df.shape))
 
-st.text("\n\n")
+# st.text("\n\n")
 
 # DataFrame Columns 
-st.markdown("<h4 style = 'color : DodgerBlue;'>Original Dataset Column Names</h4>", unsafe_allow_html = True)
-st.text(df.columns)
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Original Dataset Column Names</h4>", unsafe_allow_html = True)
+# st.text(df.columns)
 
-st.text("\n\n")
+# st.text("\n\n")
 
 # Updated DataFrame Columns
-st.markdown("<h4 style = 'color : DodgerBlue;'>Updated Dataset Column Names</h4>", unsafe_allow_html = True)
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Updated Dataset Column Names</h4>", unsafe_allow_html = True)
 
 # Just Copy DataFrame Into Another Variable
 new_df = df.copy()
@@ -100,28 +100,28 @@ df.reset_index(inplace = True)
 df.drop('index', axis = 1, inplace = True)
 
 # Display Column Names
-st.text(df.columns)
+# st.text(df.columns)
 
-st.text("\n\n")
+# st.text("\n\n")
 
 # Update Columns & Create New Groups In Dataset
 # NOTE : Here, I'm updating some of the records & create groups inside the data.
 # 1. Here, I've replaced the country name from a big string with a short string/short form.
 # Before Replace Country Name
-st.markdown("<h4 style = 'color : DodgerBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
 # st.text("\n* * Before Replace Country Name * *\n")
-st.text(df['In which country do you currently reside?'].unique())
+# st.text(df['In which country do you currently reside?'].unique())
 
-st.text("\n\n")
+# st.text("\n\n")
 
 # Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland
-st.markdown("<h4 style = 'color : DodgerBlue;'>Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland</h4>", unsafe_allow_html = True)
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland</h4>", unsafe_allow_html = True)
 df['In which country do you currently reside?'] = df['In which country do you currently reside?'].replace({'United States of America' : 'USA', 'United Kingdom of Great Britain and Northern Ireland' : 'UK & Ireland'})
 # After Replace Country Name
 # print("\n* * After Replace Country Name * *\n")
-st.text(df['In which country do you currently reside?'].unique())
+# st.text(df['In which country do you currently reside?'].unique())
 
-st.text("\n\n")
+# st.text("\n\n")
 
 # st.markdown("<h4 style = 'color : DodgerBlue;'>Here, I categorised age ranges between the 3 groups.</h4>", unsafe_allow_html = True)
 # st.write(':blue[Young Adults [18 - 39]]\n\n',
