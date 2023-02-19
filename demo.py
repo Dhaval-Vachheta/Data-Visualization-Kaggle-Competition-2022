@@ -115,7 +115,7 @@ st.text(df['In which country do you currently reside?'].unique())
 st.text("\n\n")
 
 # Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland
-st.markdown("<h4 style = 'color = DodgerBlue;'>Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland</h4>", unsafe_allow_html = True)
+st.markdown("<h4 style = 'color : DodgerBlue;'>Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland</h4>", unsafe_allow_html = True)
 df['In which country do you currently reside?'] = df['In which country do you currently reside?'].replace({'United States of America' : 'USA', 'United Kingdom of Great Britain and Northern Ireland' : 'UK & Ireland'})
 # After Replace Country Name
 # print("\n* * After Replace Country Name * *\n")
