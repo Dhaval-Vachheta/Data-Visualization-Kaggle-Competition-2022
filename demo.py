@@ -304,5 +304,5 @@ def fig1():
 	fig1.update_layout(annotations = [dict(text = 'AGE', x = 0.50, y = 0.5, font_size = 20, showarrow = False)])
 	fig1.show()
    
-st.button("Show Figure 1", on_click=fig1(), args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
+st.button("Show Figure 1", on_click=fig1, args=None, kwargs=None, type="secondary", disabled=False, use_container_width=False)
 
