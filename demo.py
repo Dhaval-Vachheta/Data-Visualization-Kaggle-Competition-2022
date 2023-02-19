@@ -13,7 +13,7 @@ import numpy as np
 
 # TITLE
 # st.title(":blue[Data Visualization]")
-st.markdown("<h1 style = 'text-align : center; color : cyan;'>Data Visualization</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style = 'text-align : center; color : DodgerBlue;'>Data Visualization</h1>", unsafe_allow_html=True)
 
 # # Load CSV Data
 # # df = pd.read_csv("../input/kaggle-survey-2022/kaggle_survey_2022_responses.csv")
