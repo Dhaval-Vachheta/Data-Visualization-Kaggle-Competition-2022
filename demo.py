@@ -14,7 +14,7 @@ import numpy as np
 # # Load CSV Data
 # # df = pd.read_csv("../input/kaggle-survey-2022/kaggle_survey_2022_responses.csv")
 url = 'https://github.com/Dhaval-Vachheta/Data-Visualization-Kaggle-Competition-2022/blob/main/Dataset/kaggle_survey_2022_responses.csv'
-df = pd.read_csv(url)
+df = pd.read_csv(url,index_col=0)
 
 # # Extend Columns In Output
 # # pd.set_option('display.max_columns', 350)
