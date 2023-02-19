@@ -262,21 +262,21 @@ def fig1():
 	count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
 	young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
 
-	print('Young Adults Counts (18-39) : ' + count_young_adults)
-	print('\nYoung Adults % (18-39) : ' + young_adults + '%')
+	print('Young Adults Counts (18-39) : ' + str(count_young_adults))
+	print('\nYoung Adults % (18-39) : ' + str(young_adults) + '%')
 
 	# Calculation For Middle Aged Adults
 	count_middle_aged_adults = len(df[(df['What is your age (# years)?'].isin(['40-59']))])
 	middle_aged_adults = len(df[(df['What is your age (# years)?'].isin(['40-59']))]) * 100 / len(df[1:])
 
-	print('Count of Middle Aged Adults Counts (40-59) : ' + count_middle_aged_adults)
-	print('\nMiddle Aged Adults % (40-59) : ' + (middle_aged_adults) + '%')
+	print('Count of Middle Aged Adults Counts (40-59) : ' + str(count_middle_aged_adults))
+	print('\nMiddle Aged Adults % (40-59) : ' + str(middle_aged_adults) + '%')
 
 	# Calculation For Old Adults
 	count_old_adults = len(df[(df['What is your age (# years)?'].isin(['60-70+']))])
 	old_adults = len(df[(df['What is your age (# years)?'].isin(['60-70+']))]) * 100 / len(df[1:])
 
-	print('Old Adults Counts (60-70+) : ' + count_old_adults)
+	print('Old Adults Counts (60-70+) : ' + str(count_old_adults))
 	print('\nOld Adults % (60-70+) : ' + str(old_adults) + '%')
 
 	# Define Color Sets 
