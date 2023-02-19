@@ -64,6 +64,8 @@ st.write('\n**Following Questions Are Described Using EDA(Exploratory Data Analy
 '29. Analysis Based On Learning Platform.\n')
 
 # Display Number of Rows & Columns (Before Data Cleaning)
+st.markdown("<h4 style = color : DodgerBlue;'>Display Number of Rows & Columns (Before Data Cleaning)</h4>", unsafe_allow_html = True)
+
 st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[0]) + ' Rows.')
 
 st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[1]) + ' Columns.')
