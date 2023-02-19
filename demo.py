@@ -4,12 +4,12 @@ import pandas as pd
 import numpy as np
 
 # # # Data Visualizaiton
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-from matplotlib import pyplot as plt
-%matplotlib inline
-import seaborn as sb
+# import plotly.express as px
+# import plotly.graph_objects as go
+# from plotly.subplots import make_subplots
+# from matplotlib import pyplot as plt
+# %matplotlib inline
+# import seaborn as sb
 
 # TITLE
 # st.title(":blue[Data Visualization]")
@@ -62,3 +62,11 @@ st.write('\n**Following Questions Are Described Using EDA(Exploratory Data Analy
 '27. Analysis Based On Used IDE On Regular Basis.\n',
 '28. Analysis Based On Programming Language(Regular).\n',
 '29. Analysis Based On Learning Platform.\n')
+
+# Display Number of Rows & Columns (Before Data Cleaning)
+st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[0]) + ' Rows.')
+
+st.text('\nBefore Data Cleaning Dataset Has ' + str(df.shape[1]) + ' Columns.')
+
+# Shape of Data 
+st.text('\nShape of Data : ', df.shape)
