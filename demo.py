@@ -123,7 +123,143 @@ st.text(df['In which country do you currently reside?'].unique())
 
 st.text("\n\n")
 
-st.markdown("<h4 style = 'color : DodgerBlue;'>Here, I categorised age ranges between the 3 groups.</h4>", unsafe_allow_html = True)
-st.write(':blue[Young Adults [18 - 39]]\n\n',
-':blue[Middle Aged Adults [40 - 59]]\n\n',
-':blue[Old Adults [60 - 70+]]\n\n')
+# st.markdown("<h4 style = 'color : DodgerBlue;'>Here, I categorised age ranges between the 3 groups.</h4>", unsafe_allow_html = True)
+# st.write(':blue[Young Adults [18 - 39]]\n\n',
+# ':blue[Middle Aged Adults [40 - 59]]\n\n',
+# ':blue[Old Adults [60 - 70+]]\n\n')
+
+# Before Update Age Data
+# print("\n* * Before Update Age Data * *\n")
+# df['What is your age (# years)?'].unique()
+# Replace Age Values (For Identifying Age Groups - Young Adults(18-39), Middle Aged Adults(40-59) & Old Adults(60-70+))
+df['What is your age (# years)?'] = df['What is your age (# years)?'].replace(['18-21', '22-24', '25-29', '30-34', '35-39'], '18-39')
+df['What is your age (# years)?'] = df['What is your age (# years)?'].replace(['40-44', '45-49', '50-54', '55-59'], '40-59')
+df['What is your age (# years)?'] = df['What is your age (# years)?'].replace(['60-69', '70+'], '60-70+')
+
+# Display Age Columns Unique Values
+# df['What is your age (# years)?'].unique()
+
+# After Update Age Data
+# print("\n* * After Update Age Data * *\n")
+# df['What is your age (# years)?'].unique()
+
+# st.text("\n\n")
+
+# 3. Here, I've categorised gender between 3 groups.
+# Man
+# Woman
+# Other ('Prefer not to say', 'Nonbinary', 'Prefer to self-describe')
+# Before Update Gender Data
+# print("\n* * Before Update Gender Data * *\n")
+# df['What is your gender? - Selected Choice'].unique()
+
+# Update Gender Data
+df['What is your gender? - Selected Choice'] = df['What is your gender? - Selected Choice'].replace(['Prefer not to say', 'Nonbinary', 'Prefer to self-describe'], 'Other')
+
+# After Update Gender Data
+# print("\n* * After Update Gender Data * *\n")
+# df['What is your gender? - Selected Choice'].unique()
+
+# st.text("\n\n")
+
+# 4. Here, I've create 7 Ranges of Earning.
+# 0-999
+# 1000-9,999
+# 10,000-49,999
+# 50,000-99,999
+# 100,000-499,999
+# 500,000-999,999
+# ">"10,000,00
+
+# Before Update Earning Data
+# print("\n* * Before Update Earning Data * *\n")
+# df['What is your current yearly compensation (approximate $USD)?'].unique()
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['$0-999'], '0-999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['3,000-3,999', '5,000-7,499', '7,500-9,999', '4,000-4,999', '2,000-2,999', '1,000-1,999'], '1000-9,999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['25,000-29,999', '30,000-39,999', '20,000-24,999', '15,000-19,999', '10,000-14,999', '40,000-49,999'], '10,000-49,999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['90,000-99,999', '50,000-59,999', '80,000-89,999', '70,000-79,999', '60,000-69,999'], '50,000-99,999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['100,000-124,999', '200,000-249,999', '150,000-199,999', '125,000-149,999', '250,000-299,999', '300,000-499,999'], '100,000-499,999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['$500,000-999,999', ], '500,000-999,999')
+df['What is your current yearly compensation (approximate $USD)?'] = df['What is your current yearly compensation (approximate $USD)?'].replace(['>$1,000,000'], '>10,000,00')
+
+# Display Unique Values
+# df['What is your current yearly compensation (approximate $USD)?'].unique()
+
+# # After Update Earning Data
+# print("\n* * After Update Earning Data * *\n")
+# df['What is your current yearly compensation (approximate $USD)?'].unique()
+
+st.text("\n\n")
+
+# 5. Some of the options has separate columns, So here I define a function to combine those options in single column.
+# Define Function For Combine All Optional Columns of Options
+def store_option_into_column(col1, col2, new_column_name):
+    
+    # Fill NA With '0'
+    for i in df.columns[col1:col2]:
+        df[i].fillna(0, inplace = True)
+
+    # Empty List
+    lst1=[]
+
+    for i in range(len(df)):
+        # Empty List
+        lst2 = []
+
+        for j in df.columns[col1:col2]:
+            tmp = df.loc[i][j]
+
+            if tmp == 0:
+                lst2.append(tmp)
+
+            if len(lst2) == (col2 - col1):
+                lst1.append('None')
+                break
+
+            if tmp != 0:
+                lst1.append(tmp.strip())
+                break
+
+    # Create New Columns        
+    df[new_column_name] = lst1
+    
+# Function Calling "store_option_into_column"
+store_option_into_column(5, 16, 'Learning Platform')
+store_option_into_column(17, 23, 'Suggested Learning Platform')
+store_option_into_column(30, 44, 'Programming Language(Regular)')
+store_option_into_column(45, 58, 'IDE(Regular)')
+store_option_into_column(59, 74, 'Used Hosted Notebook')
+store_option_into_column(75, 89, 'Suggested Data Visualization')
+store_option_into_column(91, 105, 'ML Frameworks')
+store_option_into_column(106, 119, 'ML Algorithms')
+store_option_into_column(120, 127, 'Computer Vision Methods')
+store_option_into_column(127, 132, 'NLP Methods')
+store_option_into_column(159, 170, 'Used Cloud Computing Platform')
+store_option_into_column(172, 176, 'Suggested Cloud Computing Platform')
+store_option_into_column(177, 184, 'Suggested Storage Products')
+store_option_into_column(185, 200, 'Suggested Data Products')
+store_option_into_column(201, 215, 'Suggested Business Intelligence Tools')
+
+# Display Combined Options For Suggested Data Visualization Unique Values
+# df['Suggested Data Visualization'].unique()
+
+# Display Number of Rows & Columns (After Data Cleaning)
+# print('\nAfter Data Cleaning Dataset Has ' + str(df.shape[0]) + ' Rows.')
+
+# print('\nAfter Data Cleaning Dataset Has ' + str(df.shape[1]) + ' Columns.')
+
+# # Shape of Data 
+# print('\nShape of Data : ', df.shape)
+
+# st.text("\n\n")
+
+# Number of Missing Values
+# df.isnull().sum
+
+st.markdown("<h4 style = 'color : DodgeBlue;'>1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults.</h4>", unsafe_allow_html = True)
+# Calculation For Young Adults
+count_young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))])
+young_adults = len(df[(df['What is your age (# years)?'].isin(['18-39']))]) * 100 / len(df[1:])
+
+st.text('Young Adults Counts (18-39) : ', count_young_adults)
+st.text('\nYoung Adults % (18-39) : ', young_adults, '%')
