@@ -28,6 +28,6 @@ df = pd.read_csv(url)
 
 # # Display a static table
 # st.table(df)
-df2=df.head()
+# df2=df.head()
 # Display an interactive table
-st.dataframe(df2)
+st.dataframe(df)
