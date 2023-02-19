@@ -102,10 +102,21 @@ df.drop('index', axis = 1, inplace = True)
 # Display Column Names
 st.text(df.columns)
 
+st.text("\n\n")
+
 # Update Columns & Create New Groups In Dataset
 # NOTE : Here, I'm updating some of the records & create groups inside the data.
 # 1. Here, I've replaced the country name from a big string with a short string/short form.
 # Before Replace Country Name
 st.markdown("<h4 style = 'color : DodgerBlue;'>Before Update The Few Countries Name</h4>", unsafe_allow_html = True)
 # st.text("\n* * Before Replace Country Name * *\n")
+st.text(df['In which country do you currently reside?'].unique())
+
+st.text("\n\n")
+
+# Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland
+st.markdown("<h4 style = 'color = DodgerBlue;'>Replace United Kingdom of Great Britain and Northern Ireland With UK & Ireland</h4>", unsafe_allow_html = True)
+df['In which country do you currently reside?'] = df['In which country do you currently reside?'].replace({'United States of America' : 'USA', 'United Kingdom of Great Britain and Northern Ireland' : 'UK & Ireland'})
+# After Replace Country Name
+# print("\n* * After Replace Country Name * *\n")
 st.text(df['In which country do you currently reside?'].unique())
