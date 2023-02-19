@@ -11,23 +11,19 @@ import numpy as np
 # # %matplotlib inline
 # # import seaborn as sb
 
+# TITLE
+st.title(":blue[Data Visualization]")
+
 # # Load CSV Data
 # # df = pd.read_csv("../input/kaggle-survey-2022/kaggle_survey_2022_responses.csv")
 url = 'https://github.com/Dhaval-Vachheta/Data-Visualization-Kaggle-Competition-2022/blob/main/Dataset/kaggle_survey_2022_responses.csv?raw=true'
 df = pd.read_csv(url)
 
 # # Extend Columns In Output
-# # pd.set_option('display.max_columns', 350)
-
-# # Display Data
-# st.dataframe(df)
-
-# df = pd.DataFrame(
-#     np.random.randn(10, 5),
-#     columns=("col %d" % i for i in range(5)))
+pd.set_option('display.max_columns', 350)
 
 # # Display a static table
 # st.table(df)
-# df2=df.head()
-# Display an interactive table
+
+# Display Entire Data
 st.dataframe(df)
