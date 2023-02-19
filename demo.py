@@ -34,7 +34,7 @@ st.dataframe(df)
 # Analysis Questions
 st.write('**Following Questions Are Described Using EDA(Exploratory Data Analysis)**',
 '1. Analysis Based On Kaggler\'s Age Group(Young Adults, Middle Aged Adults & Old Adults).',
-'2. Analysis Based On Top 10 Countries Wise Age Division.,
+'2. Analysis Based On Top 10 Countries Wise Age Division.',
 '3. Analysis Based On Kaggler\'s Gender(Man, Woman & Other).',
 '4. Analysis of Top 5 Countries Based On Highest Participants.',
 '5. Analysis Based On Gender Wise Division For Kaggler\'s In Top 10 Countries.',
