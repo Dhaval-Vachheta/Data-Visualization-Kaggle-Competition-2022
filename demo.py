@@ -71,6 +71,8 @@ st.text('\nThe Dataset has ' + str(df.shape[1]) + ' columns.')
 # Shape of Data 
 st.text('\nShape of Data : ' + str(df.shape))
 
+st.text("\n\n")
+
 # DataFrame Columns 
 st.markdown("<h4 style = 'color : DodgerBlue;'>Original Dataset Column Names</h4>", unsafe_allow_html = True)
 st.text(df.columns)
@@ -97,3 +99,10 @@ df.drop('index', axis = 1, inplace = True)
 
 # Display Column Names
 st.text(df.columns)
+
+# Update Columns & Create New Groups In Dataset
+# NOTE : Here, I'm updating some of the records & create groups inside the data.
+# 1. Here, I've replaced the country name from a big string with a short string/short form.
+# Before Replace Country Name
+st.text("\n* * Before Replace Country Name * *\n")
+st.text(df['In which country do you currently reside?'].unique())
